@@ -1,7 +1,8 @@
-package com.katyrin.yandexmaptest
+package com.katyrin.yandexmaptest.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.katyrin.yandexmaptest.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
