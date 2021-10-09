@@ -10,4 +10,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="confirm">Подтвердить</string>
     <string name="error_network">Ошибка соединения, проверьте подключение к интернету</string>
+    <string name="address">Адресс</string>
+    <string name="latitude">Широта</string>
+    <string name="longitude">Долгота</string>
 </resources>

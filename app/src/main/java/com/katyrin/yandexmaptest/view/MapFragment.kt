@@ -12,9 +12,7 @@ import androidx.navigation.Navigation
 import com.katyrin.yandexmaptest.R
 import com.katyrin.yandexmaptest.databinding.FragmentMapBinding
 import com.katyrin.yandexmaptest.model.data.MyPoint
-import com.katyrin.yandexmaptest.utils.ADDRESS_REQUEST_KEY
-import com.katyrin.yandexmaptest.utils.DIALOG_REQUEST_KEY
-import com.katyrin.yandexmaptest.utils.toast
+import com.katyrin.yandexmaptest.utils.*
 import com.katyrin.yandexmaptest.viewmodel.AppState
 import com.katyrin.yandexmaptest.viewmodel.MapViewModel
 import com.yandex.mapkit.Animation
@@ -66,6 +64,12 @@ class MapFragment : Fragment(), InputListener, Session.SearchListener, LocationL
         setFragmentResultListener(DIALOG_REQUEST_KEY) { _, bundle ->
             viewModel.saveCacheLocationWithAddress(bundle.getString(ADDRESS_REQUEST_KEY) ?: "")
         }
+        setFragmentResultListener(EDIT_REQUEST_KEY) { _, bundle ->
+            val point: Point = bundle.getParcelable<MyPoint>(POINT_REQUEST_KEY)
+                ?.let { Point(it.latitude, it.longitude) } ?: Point()
+            binding?.mapview?.map?.move(getCameraPosition(point))
+            myLocation = point
+        }
     }
 
     private fun renderData(appState: AppState) {
@@ -77,7 +81,11 @@ class MapFragment : Fragment(), InputListener, Session.SearchListener, LocationL
     }
 
     private fun openEditScreen(myPoint: MyPoint) {
+        viewModel.getMyPointList()
         showPointIntoMap(myPoint)
+        val navDirections: NavDirections =
+            MapFragmentDirections.actionMapFragmentToEditFragment(myPoint)
+        navController?.navigate(navDirections)
     }
 
     private fun showPointIntoMap(myPoint: MyPoint): Unit = with(myPoint) {

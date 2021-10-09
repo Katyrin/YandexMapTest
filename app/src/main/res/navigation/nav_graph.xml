@@ -29,16 +29,31 @@
         <action
             android:id="@+id/action_mapFragment_to_infoDialogFragment"
             app:destination="@id/infoDialogFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_editFragment"
+            app:destination="@id/editFragment" />
     </fragment>
 
     <dialog
         android:id="@+id/infoDialogFragment"
         android:name="com.katyrin.yandexmaptest.view.InfoDialogFragment"
         android:label="fragment_info_dialog"
-        tools:layout="@layout/fragment_info_dialog" >
+        tools:layout="@layout/fragment_info_dialog">
         <argument
             android:name="address"
             app:argType="string" />
     </dialog>
+
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.katyrin.yandexmaptest.view.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit">
+        <argument
+            android:name="myPoint"
+            android:defaultValue="@null"
+            app:argType="com.katyrin.yandexmaptest.model.data.MyPoint"
+            app:nullable="true" />
+    </fragment>
 
 </navigation>

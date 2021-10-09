@@ -2,3 +2,5 @@ package com.katyrin.yandexmaptest.utils
 
 const val DIALOG_REQUEST_KEY = "DIALOG_REQUEST_KEY"
 const val ADDRESS_REQUEST_KEY = "ADDRESS_REQUEST_KEY"
+const val EDIT_REQUEST_KEY = "EDIT_REQUEST_KEY"
+const val POINT_REQUEST_KEY = "POINT_REQUEST_KEY"
