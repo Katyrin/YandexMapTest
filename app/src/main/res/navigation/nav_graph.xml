@@ -26,5 +26,19 @@
         <argument
             android:name="longitude"
             app:argType="float" />
+        <action
+            android:id="@+id/action_mapFragment_to_infoDialogFragment"
+            app:destination="@id/infoDialogFragment" />
     </fragment>
+
+    <dialog
+        android:id="@+id/infoDialogFragment"
+        android:name="com.katyrin.yandexmaptest.view.InfoDialogFragment"
+        android:label="fragment_info_dialog"
+        tools:layout="@layout/fragment_info_dialog" >
+        <argument
+            android:name="address"
+            app:argType="string" />
+    </dialog>
+
 </navigation>

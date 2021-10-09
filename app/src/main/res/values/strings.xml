@@ -7,4 +7,7 @@
     <string name="grant_access">"Разрешить доступа "</string>
     <string name="do_not">"Не разрешать "</string>
     <string name="yandex_map_key" tools:ignore="TypographyDashes">1a54a934-9e61-4ebc-a201-db5ab74931ef</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="error_network">Ошибка соединения, проверьте подключение к интернету</string>
 </resources>

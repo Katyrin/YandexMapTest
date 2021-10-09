@@ -3,4 +3,6 @@
 
     <dimen name="margin_horizontal">20dp</dimen>
 
+    <dimen name="text_size_header_normal">24sp</dimen>
+
 </resources>

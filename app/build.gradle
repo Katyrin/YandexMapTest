@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -51,6 +52,17 @@ dependencies {
 
     //Yandex map
     implementation 'com.yandex.android:maps.mobile:4.0.0-full'
+
+    //Koin
+    implementation 'org.koin:koin-android:2.2.1'
+    implementation 'org.koin:koin-androidx-viewmodel:2.2.1'
+    implementation 'org.koin:koin-androidx-scope:2.2.1'
+    implementation 'org.koin:koin-androidx-fragment:2.2.1'
+
+    //Room
+    implementation 'androidx.room:room-runtime:2.3.0'
+    implementation "androidx.room:room-ktx:2.3.0"
+    kapt 'androidx.room:room-compiler:2.3.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

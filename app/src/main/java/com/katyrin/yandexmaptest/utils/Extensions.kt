@@ -41,6 +41,9 @@ fun Fragment.getLocation(): Location? =
 fun Fragment.toast(resource: Int): Unit =
     Toast.makeText(requireContext(), resource, Toast.LENGTH_LONG).show()
 
+fun Fragment.toast(message: String?): Unit =
+    Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+
 fun Fragment.showRationaleDialog(): Unit =
     AlertDialog.Builder(requireContext())
         .setTitle(getString(R.string.access_to_location))
